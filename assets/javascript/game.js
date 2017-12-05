@@ -1,8 +1,8 @@
 var url = "questions.json";
-$.getJSON(url, function(data){
+$.getJSON(url, function(response){
 
   var $question = $("#question")
-  var questionHTML = $question.text(data.question);
+  var questionHTML = $question.text(response.question);
   var answersHTML = "<ul>";
   $.each(data.answers, function(i, answer) {
     answersHTML += '<li class="answer">'
