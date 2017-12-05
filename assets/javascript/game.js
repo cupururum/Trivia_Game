@@ -1,4 +1,4 @@
-var url = "../assets/data/questions.json";
+var url = "questions.json";
 $.getJSON(url, function(data){
 
   var $question = $("#question")
