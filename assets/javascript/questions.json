@@ -4,10 +4,5 @@
     "question" : "What is the color of the grass?",
     "answers" : ["blue", "green", "yellow", "purple"],
     "correctAnswer" : "green"
-  },
-  {
-    "question" : "What is the color of the sun in the zenith?",
-    "answers" : ["blue", "green", "yellow", "purple"],
-    "correctAnswer" : "yellow"
   }
 ]
