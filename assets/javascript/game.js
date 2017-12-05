@@ -1,4 +1,4 @@
-var url = "assets/javascript/questions.json";
+var url = "https://cupururum.github.io/Trivia_Game/assets/javascript/questions.json";
 $.getJSON(url, function(response){
 
   var $question = $("#question")
