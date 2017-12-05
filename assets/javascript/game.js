@@ -1,6 +1,6 @@
-var url = "../data/questions.json";
+var url = "../assets/data/questions.json";
 $.getJSON(url, function(data){
-  
+
   var $question = $("#question")
   var questionHTML = $question.text(data.question);
   var answersHTML = "<ul>";
