@@ -2,11 +2,13 @@
   {
     "question" : "What is the color of the grass?",
     "answers" : ["blue", "green", "yellow", "purple"],
-    "correctAnswer" : "green"
+    "correctAnswer" : "green",
+    "gyphi": "https://media.giphy.com/media/Ny6tc0CUS0CmQ/giphy.gif"
   },
   {
     "question" : "What is the color of the sun in the zenith?",
     "answers" : ["blue", "green", "yellow", "purple"],
-    "correctAnswer" : "yellow"
+    "correctAnswer" : "yellow",
+    "gyphi": "https://media.giphy.com/media/l46C9XY1F9UHu74pq/giphy.gif"
   }
 ]
