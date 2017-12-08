@@ -66,19 +66,19 @@ $('#results').empty();
         console.log(data[index].correctAnswer);
         if (userAnswer === data[index].correctAnswer) { //check if answer is correct
           $("#variants").html('<h2> You chose the CORRECT answer ' + '"' + data[index].correctAnswer + '"' + '</h2>');
-          var gyphi = $("<img>");
-          gyphi.attr("src", data[index].gyphi)
-          gyphi.attr("alt", "gyphi");
-          $("#variants").append(gyphi);
+          var giphy = $("<img>");
+          giphy.attr("src", data[index].giphy)
+          giphy.attr("alt", "giphy");
+          $("#variants").append(giphy);
           index++
           correct++
           setTimeout(chooseQuestion, 1000*3)
         } else if (userAnswer !== data[index].correctAnswer) { //if the answer is not correct
           $("#variants").html('<h2> You chose the WRONG answer. The correct answer is ' + '"' + data[index].correctAnswer + '"' + "</h2>");
-          var gyphi = $("<img>");
-          gyphi.attr("src", data[index].gyphi)
-          gyphi.attr("alt", "gyphi");
-          $("#variants").append(gyphi);
+          var giphy = $("<img>");
+          giphy.attr("src", data[index].giphy)
+          giphy.attr("alt", "giphy");
+          $("#variants").append(giphy);
           index++
           wrong++
           setTimeout(chooseQuestion, 1000*3)

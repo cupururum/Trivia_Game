@@ -3,18 +3,18 @@
     "question" : "What is the color of the grass?",
     "answers" : ["blue", "green", "yellow", "purple"],
     "correctAnswer" : "green",
-    "gyphi": "https://media.giphy.com/media/Ny6tc0CUS0CmQ/giphy.gif"
+    "giphy": "https://media.giphy.com/media/Ny6tc0CUS0CmQ/giphy.gif"
   },
   {
     "question" : "What is the color of the sun in the zenith?",
     "answers" : ["cyan", "yellow", "red", "pink"],
     "correctAnswer" : "yellow",
-    "gyphi": "https://media.giphy.com/media/l46C9XY1F9UHu74pq/giphy.gif"
+    "giphy": "https://media.giphy.com/media/l46C9XY1F9UHu74pq/giphy.gif"
   },
   {
     "question" : "What is the color of the snow?",
     "answers" : ["orange", "black", "indigo", "white"],
     "correctAnswer" : "white",
-    "gyphi": "https://media.giphy.com/media/14uJKhQMZ1wLfO/giphy.gif"
+    "giphy": "https://media.giphy.com/media/14uJKhQMZ1wLfO/giphy.gif"
   }
 ]
