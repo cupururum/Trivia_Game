@@ -12,6 +12,7 @@ $('button').on("click", function(){
 
 
 function chooseQuestion() {
+$('#results').empty();
 //the countdoun timer appears
   var timer = 10;
   $("#timer").text(timer);
@@ -33,8 +34,10 @@ function chooseQuestion() {
     //check here if the json array is over, then show the result and continue game
     if (index === data.length) {
         clearInterval(intervals);
-        $(".gameDiv").append('<div>')html('<p> Correct: ' + correct + '<br> Wrong: ' + wrong + '<br> Unanswered: ' + unanswered + '</p>')
+        $('#results').html('<p> Correct: ' + correct + '<br> Wrong: ' + wrong + '<br> Unanswered: ' + unanswered + '</p>')
         index = 0;
+        $('#question').empty();
+        $('#variants').empty();
         setTimeout(chooseQuestion, 1000*5);
       };
 
@@ -52,23 +55,32 @@ function chooseQuestion() {
     answersHTML += "</ul>"; //close the list
     $('#variants').html(answersHTML);//display list in html
 
-    $(".answer-list").on("click", '.answer', function(){ //assign the click function to the list items
+    $(".answer").on("click", function(){ //assign the click function to the list items
       clearInterval(intervals); //when I choose the answer I stop timer
       var userAnswer = $(this).text()
       console.log(userAnswer);
       console.log(data[index].correctAnswer);
       if (userAnswer === data[index].correctAnswer) { //check if answer is correct
+        $("#variants").html('<h2> You chose the CORRECT answer ' + '"' + data[index].correctAnswer + '"' + '</h2>');
+        var gyphi = $("<img>");
+        gyphi.attr("src", data[index].gyphi)
+        gyphi.attr("alt", "gyphi");
+        $("#variants").append(gyphi);
         index++
         correct++
-        $("#variants").append('<div>').html("<h2> You chose the correct answer </h2>");
         setTimeout(chooseQuestion, 1000*3)
       } else if (userAnswer !== data[index].correctAnswer) { //if the answer is not correct
+        $("#variants").html('<h2> You chose the WRONG answer. The correct answer is ' + '"' + data[index].correctAnswer + '"' + "</h2>");
+        var gyphi = $("<img>");
+        gyphi.attr("src", data[index].gyphi)
+        gyphi.attr("alt", "gyphi");
+        $("#variants").append(gyphi);
         index++
         wrong++
-        $("#variants").append('<div>').html("<h2> You chose the wrong answer </h2>");
         setTimeout(chooseQuestion, 1000*3)
       }
     }); //end of onclick function
+
   }); //end JSON
 };// end of chooseQuestion
 
