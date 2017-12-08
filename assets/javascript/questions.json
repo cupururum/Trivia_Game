@@ -7,8 +7,14 @@
   },
   {
     "question" : "What is the color of the sun in the zenith?",
-    "answers" : ["blue", "green", "yellow", "purple"],
+    "answers" : ["cyan", "yellow", "red", "pink"],
     "correctAnswer" : "yellow",
     "gyphi": "https://media.giphy.com/media/l46C9XY1F9UHu74pq/giphy.gif"
+  },
+  {
+    "question" : "What is the color of the snow?",
+    "answers" : ["orange", "black", "indigo", "white"],
+    "correctAnswer" : "white",
+    "gyphi": "https://media.giphy.com/media/14uJKhQMZ1wLfO/giphy.gif"
   }
 ]

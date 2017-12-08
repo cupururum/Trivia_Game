@@ -36,51 +36,54 @@ $('#results').empty();
         clearInterval(intervals);
         $('#results').html('<p> Correct: ' + correct + '<br> Wrong: ' + wrong + '<br> Unanswered: ' + unanswered + '</p>')
         index = 0;
+        wrong = 0;
+        unanswered = 0;
+        correct = 0;
         $('#question').empty();
         $('#variants').empty();
+        $('#timer').empty();
         setTimeout(chooseQuestion, 1000*5);
-      };
+      } else {
+        //the question and answers appear
+      console.log(data);
+      var $question = $("#question")
+      var questionHTML = $question.text(data[index].question); //display the question
+      console.log(data[index].question);
+      var answersHTML = "<ul class='answer-list'>"; //start building the list with answers
+      console.log(data[index].answers)
+      $.each(data[index].answers, function(i, answer) {
+        answersHTML += '<li class="answer">'; //creating list of items
+        answersHTML += answer + '</li>'; //close the item
+      });
+      answersHTML += "</ul>"; //close the list
+      $('#variants').html(answersHTML);//display list in html
 
-      //the question and answers appear
-    console.log(data);
-    var $question = $("#question")
-    var questionHTML = $question.text(data[index].question); //display the question
-    console.log(data[index].question);
-    var answersHTML = "<ul class='answer-list'>"; //start building the list with answers
-    console.log(data[index].answers)
-    $.each(data[index].answers, function(i, answer) {
-      answersHTML += '<li class="answer">'; //creating list of items
-      answersHTML += answer + '</li>'; //close the item
-    });
-    answersHTML += "</ul>"; //close the list
-    $('#variants').html(answersHTML);//display list in html
-
-    $(".answer").on("click", function(){ //assign the click function to the list items
-      clearInterval(intervals); //when I choose the answer I stop timer
-      var userAnswer = $(this).text()
-      console.log(userAnswer);
-      console.log(data[index].correctAnswer);
-      if (userAnswer === data[index].correctAnswer) { //check if answer is correct
-        $("#variants").html('<h2> You chose the CORRECT answer ' + '"' + data[index].correctAnswer + '"' + '</h2>');
-        var gyphi = $("<img>");
-        gyphi.attr("src", data[index].gyphi)
-        gyphi.attr("alt", "gyphi");
-        $("#variants").append(gyphi);
-        index++
-        correct++
-        setTimeout(chooseQuestion, 1000*3)
-      } else if (userAnswer !== data[index].correctAnswer) { //if the answer is not correct
-        $("#variants").html('<h2> You chose the WRONG answer. The correct answer is ' + '"' + data[index].correctAnswer + '"' + "</h2>");
-        var gyphi = $("<img>");
-        gyphi.attr("src", data[index].gyphi)
-        gyphi.attr("alt", "gyphi");
-        $("#variants").append(gyphi);
-        index++
-        wrong++
-        setTimeout(chooseQuestion, 1000*3)
-      }
-    }); //end of onclick function
-
+      $(".answer").on("click", function(){ //assign the click function to the list items
+        clearInterval(intervals); //when I choose the answer I stop timer
+        var userAnswer = $(this).text()
+        console.log(userAnswer);
+        console.log(data[index].correctAnswer);
+        if (userAnswer === data[index].correctAnswer) { //check if answer is correct
+          $("#variants").html('<h2> You chose the CORRECT answer ' + '"' + data[index].correctAnswer + '"' + '</h2>');
+          var gyphi = $("<img>");
+          gyphi.attr("src", data[index].gyphi)
+          gyphi.attr("alt", "gyphi");
+          $("#variants").append(gyphi);
+          index++
+          correct++
+          setTimeout(chooseQuestion, 1000*3)
+        } else if (userAnswer !== data[index].correctAnswer) { //if the answer is not correct
+          $("#variants").html('<h2> You chose the WRONG answer. The correct answer is ' + '"' + data[index].correctAnswer + '"' + "</h2>");
+          var gyphi = $("<img>");
+          gyphi.attr("src", data[index].gyphi)
+          gyphi.attr("alt", "gyphi");
+          $("#variants").append(gyphi);
+          index++
+          wrong++
+          setTimeout(chooseQuestion, 1000*3)
+        }
+      });//end of onclick function
+    }; //end of if else
   }); //end JSON
 };// end of chooseQuestion
 
