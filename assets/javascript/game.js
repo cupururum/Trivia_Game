@@ -33,7 +33,7 @@ $('#results').empty();
   $.getJSON(url, function(data){
     //check here if the json array is over, then show the result and continue game
     if (index === data.length) {
-        //clearInterval(intervals);
+        clearInterval(intervals);
         $('#results').html('<p> Correct: ' + correct + '<br> Wrong: ' + wrong + '<br> Unanswered: ' + unanswered + '</p>')
         index = 0;
         wrong = 0;
@@ -41,7 +41,6 @@ $('#results').empty();
         correct = 0;
         $('#question').empty();
         $('#variants').empty();
-        timer = 5;
         $('#timer').text("Next round begins in " + 5 + " seconds");
         setTimeout(chooseQuestion, 1000*5);
       } else {
